@@ -1,4 +1,4 @@
-# 📊 Social Anxiety Dataset — Statistical Analysis
+# Social Anxiety Dataset — Statistical Analysis
 ### *Análisis Estadístico — Social Anxiety Dataset*
 
 ---

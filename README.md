@@ -11,7 +11,7 @@
 
 ### Overview
 
-End-to-end statistical analysis of the **Social Anxiety Dataset** (Kaggle, Australia 2019–2022), covering data cleaning, inferential statistics, goodness of fit, and linear regression — both simple and non-linear with transformations. All results are benchmarked against an external reference: **Stanton et al. (2020)**, a peer-reviewed study of 1,491 Australian adults using the DASS-21 instrument during the COVID-19 pandemic.
+End-to-end statistical analysis of the **Social Anxiety Dataset** (Kaggle, Australia 2019–2022), covering data cleaning, inferential statistics, goodness of fit, and linear regression both simple and non-linear with transformations. All results are benchmarked against an external reference: **Stanton et al. (2020)**, a peer-reviewed study of 1,491 Australian adults using the DASS-21 instrument during the COVID-19 pandemic.
 
 ---
 
@@ -43,11 +43,11 @@ End-to-end statistical analysis of the **Social Anxiety Dataset** (Kaggle, Austr
 ### Project Structure
 
 ```
-📦 social-anxiety-analysis
-├── 📓 analysis.ipynb          # Main notebook with full analysis
-├── 📊 data/
+ social-anxiety-analysis
+├──  analysis.ipynb          # Main notebook with full analysis
+├── data/
 │   └── social_anxiety.csv     # Original dataset
-├── 📈 figures/                # All generated plots
+├── figures/                # All generated plots
 │   ├── ic_media.png
 │   ├── ic_varianza.png
 │   ├── hipotesis_una.png
@@ -69,7 +69,7 @@ End-to-end statistical analysis of the **Social Anxiety Dataset** (Kaggle, Austr
 - **Stress Level** same linear conversion with clinical cutoffs: Normal ≤7, Mild 8–9, Moderate 10–12, Severe 13–16, Extremely Severe >16
 - **Physical Activity** converted from hours to minutes (×60)
 
->  **Limitation:** the 1–10 → DASS-21 conversion assumes perfect proportionality between two distinct instruments, which is not clinically validated.
+>  **Limitation:** the 1–10 -> DASS-21 conversion assumes perfect proportionality between two distinct instruments, which is not clinically validated.
 
 ---
 
@@ -81,7 +81,7 @@ Variable: `Sleep Hours` · Sample: n = 200 · α = 0.05
 | Mean μ | 6.70 hrs | [6.54, 6.87] | 7.1 hrs |  No |
 | Variance σ² | 1.37 | [1.13, 1.68] | 1.69 |  No |
 
-Both reference values fall outside the confidence intervals — the dataset population sleeps significantly less and with less variability than the general Australian population.
+Both reference values fall outside the confidence intervals, the dataset population sleeps significantly less and with less variability than the general Australian population.
 
 ---
 
@@ -121,7 +121,7 @@ Comparing observed category distributions against Stanton et al. (2020) proporti
 | Anxiety DASS-21 | 20,524.40 | 9.49 | ≈ 0 |  Reject H₀ |
 | Stress DASS-21 | 22,450.71 | 9.49 | ≈ 0 | Reject H₀ |
 
-The dataset has far fewer Normal cases and far more Severe/Extremely Severe cases than the general Australian population — explained by the clinical nature of the sample and the COVID-19 pandemic context.
+The dataset has far fewer Normal cases and far more Severe/Extremely Severe cases than the general Australian population explained by the clinical nature of the sample and the COVID-19 pandemic context.
 
 ---
 
@@ -143,7 +143,7 @@ The dataset has far fewer Normal cases and far more Severe/Extremely Severe case
 
 ---
 
-#### 6. Non-linear Regression — Reciprocal Transformation
+#### 6. Non-linear Regression, Reciprocal Transformation
 
 ```
 ŷ = −5.9487 + 79.7263 · (1/x)
@@ -214,7 +214,7 @@ jupyter notebook analysis.ipynb
 
 ### Descripción general
 
-Análisis estadístico completo del **Social Anxiety Dataset** (Kaggle, Australia 2019–2022), que incluye limpieza de datos, estadística inferencial, bondad de ajuste y regresión lineal — simple y no lineal con transformadas. Todos los resultados se comparan contra una referencia externa: **Stanton et al. (2020)**, un estudio publicado en revista indexada con 1,491 adultos australianos usando el instrumento DASS-21 durante la pandemia de COVID-19.
+Análisis estadístico completo del **Social Anxiety Dataset** (Kaggle, Australia 2019–2022), que incluye limpieza de datos, estadística inferencial, bondad de ajuste y regresión lineal simple y no lineal con transformadas. Todos los resultados se comparan contra una referencia externa: **Stanton et al. (2020)**, un estudio publicado en revista indexada con 1,491 adultos australianos usando el instrumento DASS-21 durante la pandemia de COVID-19.
 
 ---
 
@@ -276,7 +276,7 @@ Análisis estadístico completo del **Social Anxiety Dataset** (Kaggle, Australi
 
 ---
 
-#### 2.  Intervalos de Confianza — Sleep Hours
+#### 2.  Intervalos de Confianza, Sleep Hours
 Variable: `Sleep Hours` · Muestra: n = 200 · α = 0.05
 
 | Parámetro | Muestral | IC 95% | Ref. Stanton | ¿En IC? |
@@ -284,7 +284,7 @@ Variable: `Sleep Hours` · Muestra: n = 200 · α = 0.05
 | Media μ | 6.70 hrs | [6.54, 6.87] | 7.1 hrs |  No |
 | Varianza σ² | 1.37 | [1.13, 1.68] | 1.69 |  No |
 
-Ambos valores de referencia quedan fuera de los intervalos — la población del dataset duerme significativamente menos y con menos variabilidad que la población general australiana.
+Ambos valores de referencia quedan fuera de los intervalos, la población del dataset duerme significativamente menos y con menos variabilidad que la población general australiana.
 
 ---
 
@@ -324,7 +324,7 @@ Comparación de la distribución de categorías observadas contra las proporcion
 | Ansiedad DASS-21 | 20,524.40 | 9.49 | ≈ 0 | Se rechaza H₀ |
 | Estrés DASS-21 | 22,450.71 | 9.49 | ≈ 0 | Se rechaza H₀ |
 
-El dataset tiene muchos menos casos Normales y muchos más casos Severos/Extremadamente Severos que la población general australiana — explicado por la naturaleza clínica de la muestra y el contexto pandémico de COVID-19.
+El dataset tiene muchos menos casos Normales y muchos más casos Severos/Extremadamente Severos que la población general australiana, explicado por la naturaleza clínica de la muestra y el contexto pandémico de COVID-19.
 
 ---
 

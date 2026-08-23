@@ -63,29 +63,29 @@ End-to-end statistical analysis of the **Social Anxiety Dataset** (Kaggle, Austr
 
 ### Analysis Pipeline
 
-#### 1. 🧹 Data Cleaning & Transformation
+#### 1.  Data Cleaning & Transformation
 - **Birth Year** derived as `2022 − Age`
 - **Anxiety Level** converted from 1–10 scale to DASS-21 (0–21): `((value − 1) / 9) × 21`
 - **Stress Level** same linear conversion with clinical cutoffs: Normal ≤7, Mild 8–9, Moderate 10–12, Severe 13–16, Extremely Severe >16
 - **Physical Activity** converted from hours to minutes (×60)
 
-> ⚠️ **Limitation:** the 1–10 → DASS-21 conversion assumes perfect proportionality between two distinct instruments, which is not clinically validated.
+>  **Limitation:** the 1–10 → DASS-21 conversion assumes perfect proportionality between two distinct instruments, which is not clinically validated.
 
 ---
 
-#### 2. 📐 Confidence Intervals — Sleep Hours
+#### 2. Confidence Intervals — Sleep Hours
 Variable: `Sleep Hours` · Sample: n = 200 · α = 0.05
 
 | Parameter | Sample | IC 95% | Stanton ref | In IC? |
 |---|---|---|---|---|
-| Mean μ | 6.70 hrs | [6.54, 6.87] | 7.1 hrs | ❌ No |
-| Variance σ² | 1.37 | [1.13, 1.68] | 1.69 | ❌ No |
+| Mean μ | 6.70 hrs | [6.54, 6.87] | 7.1 hrs |  No |
+| Variance σ² | 1.37 | [1.13, 1.68] | 1.69 |  No |
 
 Both reference values fall outside the confidence intervals — the dataset population sleeps significantly less and with less variability than the general Australian population.
 
 ---
 
-#### 3. 🔬 Hypothesis Testing
+#### 3.  Hypothesis Testing
 
 **One-sample test — Anxiety Level (DASS-21)**
 
@@ -112,20 +112,20 @@ Both reference values fall outside the confidence intervals — the dataset popu
 
 ---
 
-#### 4. 📊 Goodness of Fit (Chi-square)
+#### 4.  Goodness of Fit (Chi-square)
 
 Comparing observed category distributions against Stanton et al. (2020) proportions.
 
 | Variable | χ² observed | χ² critical | p-value | Decision |
 |---|---|---|---|---|
-| Anxiety DASS-21 | 20,524.40 | 9.49 | ≈ 0 | ❌ Reject H₀ |
-| Stress DASS-21 | 22,450.71 | 9.49 | ≈ 0 | ❌ Reject H₀ |
+| Anxiety DASS-21 | 20,524.40 | 9.49 | ≈ 0 |  Reject H₀ |
+| Stress DASS-21 | 22,450.71 | 9.49 | ≈ 0 | Reject H₀ |
 
 The dataset has far fewer Normal cases and far more Severe/Extremely Severe cases than the general Australian population — explained by the clinical nature of the sample and the COVID-19 pandemic context.
 
 ---
 
-#### 5. 📈 Linear Regression — Sleep Hours → Anxiety Level
+#### 5. Linear Regression — Sleep Hours → Anxiety Level
 
 ```
 ŷ = 19.69 − 1.98x
@@ -143,7 +143,7 @@ The dataset has far fewer Normal cases and far more Severe/Extremely Severe case
 
 ---
 
-#### 6. 📉 Non-linear Regression — Reciprocal Transformation
+#### 6. Non-linear Regression — Reciprocal Transformation
 
 ```
 ŷ = −5.9487 + 79.7263 · (1/x)
@@ -246,11 +246,11 @@ Análisis estadístico completo del **Social Anxiety Dataset** (Kaggle, Australi
 ### Estructura del Proyecto
 
 ```
-📦 social-anxiety-analysis
-├── 📓 analysis.ipynb          # Notebook principal con el análisis completo
-├── 📊 data/
+ social-anxiety-analysis
+├──  analysis.ipynb          # Notebook principal con el análisis completo
+├── data/
 │   └── social_anxiety.csv     # Dataset original
-├── 📈 figures/                # Todas las gráficas generadas
+├──  figures/                # Todas las gráficas generadas
 │   ├── ic_media.png
 │   ├── ic_varianza.png
 │   ├── hipotesis_una.png
@@ -266,29 +266,29 @@ Análisis estadístico completo del **Social Anxiety Dataset** (Kaggle, Australi
 
 ### Pipeline de Análisis
 
-#### 1. 🧹 Limpieza y Transformación de Variables
+#### 1.  Limpieza y Transformación de Variables
 - **Birth Year** derivado como `2022 − Age`
 - **Anxiety Level** convertido de escala 1–10 a DASS-21 (0–21): `((valor − 1) / 9) × 21`
 - **Stress Level** misma conversión lineal con cortes clínicos: Normal ≤7, Mild 8–9, Moderate 10–12, Severe 13–16, Extremely Severe >16
 - **Physical Activity** convertida de horas a minutos (×60)
 
-> ⚠️ **Limitación:** la conversión 1–10 → DASS-21 asume proporcionalidad perfecta entre dos instrumentos distintos, lo cual no está clínicamente validado.
+>  **Limitación:** la conversión 1–10 → DASS-21 asume proporcionalidad perfecta entre dos instrumentos distintos, lo cual no está clínicamente validado.
 
 ---
 
-#### 2. 📐 Intervalos de Confianza — Sleep Hours
+#### 2.  Intervalos de Confianza — Sleep Hours
 Variable: `Sleep Hours` · Muestra: n = 200 · α = 0.05
 
 | Parámetro | Muestral | IC 95% | Ref. Stanton | ¿En IC? |
 |---|---|---|---|---|
-| Media μ | 6.70 hrs | [6.54, 6.87] | 7.1 hrs | ❌ No |
-| Varianza σ² | 1.37 | [1.13, 1.68] | 1.69 | ❌ No |
+| Media μ | 6.70 hrs | [6.54, 6.87] | 7.1 hrs |  No |
+| Varianza σ² | 1.37 | [1.13, 1.68] | 1.69 |  No |
 
 Ambos valores de referencia quedan fuera de los intervalos — la población del dataset duerme significativamente menos y con menos variabilidad que la población general australiana.
 
 ---
 
-#### 3. 🔬 Pruebas de Hipótesis
+#### 3.  Pruebas de Hipótesis
 
 **Una muestra — Anxiety Level (DASS-21)**
 
@@ -315,20 +315,20 @@ Ambos valores de referencia quedan fuera de los intervalos — la población del
 
 ---
 
-#### 4. 📊 Bondad de Ajuste (Chi-cuadrado)
+#### 4. Bondad de Ajuste (Chi-cuadrado)
 
 Comparación de la distribución de categorías observadas contra las proporciones de Stanton et al. (2020).
 
 | Variable | χ² observado | χ² crítico | p-valor | Decisión |
 |---|---|---|---|---|
-| Ansiedad DASS-21 | 20,524.40 | 9.49 | ≈ 0 | ❌ Se rechaza H₀ |
-| Estrés DASS-21 | 22,450.71 | 9.49 | ≈ 0 | ❌ Se rechaza H₀ |
+| Ansiedad DASS-21 | 20,524.40 | 9.49 | ≈ 0 | Se rechaza H₀ |
+| Estrés DASS-21 | 22,450.71 | 9.49 | ≈ 0 | Se rechaza H₀ |
 
 El dataset tiene muchos menos casos Normales y muchos más casos Severos/Extremadamente Severos que la población general australiana — explicado por la naturaleza clínica de la muestra y el contexto pandémico de COVID-19.
 
 ---
 
-#### 5. 📈 Regresión Lineal — Sleep Hours → Anxiety Level
+#### 5. Regresión Lineal — Sleep Hours → Anxiety Level
 
 ```
 ŷ = 19.69 − 1.98x
@@ -346,7 +346,7 @@ El dataset tiene muchos menos casos Normales y muchos más casos Severos/Extrema
 
 ---
 
-#### 6. 📉 Regresión No Lineal — Transformada Recíproca
+#### 6. Regresión No Lineal — Transformada Recíproca
 
 ```
 ŷ = −5.9487 + 79.7263 · (1/x)
